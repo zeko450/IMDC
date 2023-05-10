@@ -5,7 +5,7 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-<h1><%= "Hello World! This is live ! " %>
+<h1><%= "Hello World! This is live from menad! " %>
 </h1>
 <h1>Brapapapa huhuhuhh hdsahjdhja
 </h1>
