@@ -8,7 +8,7 @@ public class GestionFilmImpl implements IGestionFilm{
 
     DataManager dataManager = null;
 
-    public GestionFilmImpl(DataManager dataManager) {this.dataManager = DataManager.getInstanceManager();}
+    public GestionFilmImpl() {this.dataManager = DataManager.getInstanceManager();}
 
 
     @Override
