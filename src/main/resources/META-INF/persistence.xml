@@ -4,6 +4,27 @@
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
              version="3.0">
     <persistence-unit name="persistence">
+        <class>com.example.entity.Admin</class>
+        <class>com.example.entity.Membre</class>
+        <class>com.example.entity.Commentaire</class>
+        <class>com.example.entity.Favoris</class>
+        <class>com.example.entity.Note</class>
+        <class>com.example.entity.Film</class>
 
+        <properties>
+
+            <property name="hibernate.connection.url"
+                      value="jdbc:mysql://mysql-zeko450.alwaysdata.net/zeko450_services?useSSL=false"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="hibernate.connection.username" value="zeko450"/>
+            <property name="hibernate.connection.password" value="Alwaysdata2023"/>
+
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+
+        </properties>
     </persistence-unit>
 </persistence>
