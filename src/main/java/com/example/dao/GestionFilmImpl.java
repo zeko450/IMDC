@@ -1,6 +1,5 @@
 package com.example.dao;
 
-import com.example.entity.Favoris;
 import com.example.entity.Film;
 import jakarta.persistence.EntityTransaction;
 

@@ -1,7 +1,6 @@
 package com.example.dao;
 
 import com.example.entity.Commentaire;
-import com.example.entity.Film;
 import jakarta.persistence.EntityTransaction;
 
 public class GestionCommentaireImpl implements IGestionCommentaire{
