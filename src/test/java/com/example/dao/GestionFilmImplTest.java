@@ -56,6 +56,11 @@ class GestionFilmImplTest {
     }
 
     @Test
-    void supprimerFilm() {
+    void testSupprimerFilmRetourneTrue() {
+        System.out.println("testSupprimerFilmRetourneTrue");
+        //Supprimer le film
+        boolean filmSupprime = gestionFilm.supprimerFilm(1);
+
+        Assert.assertTrue(filmSupprime);
     }
 }
