@@ -37,6 +37,11 @@ public class Favoris {
         this.film = film;
     }
 
+    public Favoris(Membre membre, Film film) {
+        this.membre = membre;
+        this.film = film;
+    }
+
     //ToString
     @Override
     public String toString() {
