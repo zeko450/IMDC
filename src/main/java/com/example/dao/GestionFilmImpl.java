@@ -42,7 +42,6 @@ public class GestionFilmImpl implements IGestionFilm{
             filmExistant.setRealisateurs(film.getRealisateurs());
             filmExistant.setCategorie(film.getCategorie());
             transaction.commit();
-            transaction.commit();
             return true;
         }catch(Exception e){
             e.printStackTrace();
