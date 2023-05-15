@@ -39,7 +39,16 @@ public class GestionMembreImpl implements IGestionMembre{
 
         try{
             Membre membreExistant = dataManager.manager.find(Membre.class,id);
-            membreExistant = membre;
+            membreExistant.setNomUtilisateur(membre.getNomUtilisateur());
+            membreExistant.setMotDePasse(membre.getMotDePasse());
+            membreExistant.setNom(membre.getNom());
+            membreExistant.setPrenom(membre.getPrenom());
+            membreExistant.setEmail(membre.getEmail());
+            membreExistant.setDateNaissance(membre.getDateNaissance());
+            membreExistant.setTypeCompte(membre.getTypeCompte());
+            membreExistant.setNbNote(membreExistant.getNbNote());
+            membreExistant.setNbCommentaire(membreExistant.getNbCommentaire());
+            membreExistant.setDateCreation(membre.getDateCreation());
             transaction.commit();
             return true;
         }catch(Exception e){
