@@ -102,6 +102,7 @@ public class GestionMembreImpl implements IGestionMembre{
     public Membre rechercherMembre(String nomUtilisateur) {
         try {
             Query query = dataManager.manager.createQuery("SELECT M FROM Membre M WHERE M.nomUtilisateur = :nomUtilisateur");
+            query.setParameter("nomUtilisateur",nomUtilisateur);
             Membre membre = (Membre) query.getSingleResult();
             return membre;
         } catch (Exception e) {
