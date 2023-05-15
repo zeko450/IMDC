@@ -6,9 +6,10 @@ import java.util.List;
 
 public interface IRechercheFilm {
 
+    List<Film> retournerListFilms();
     List<Film> rechercherFilmParTitre(String titre);
 
-    List<Film> rechercherFilmParAnnee(int annee);
+    List<Film> rechercherFilmParAnnee(String annee);
 
     List<Film> rechercherFilmParCategorie(String categorie);
 
