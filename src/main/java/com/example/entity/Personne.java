@@ -10,6 +10,7 @@ public class Personne {
     @GeneratedValue()
     private Integer idPersonne;
 
+    @Column(unique = true)
     private String nomUtilisateur;
     private String motDePasse;
     private String nom;
