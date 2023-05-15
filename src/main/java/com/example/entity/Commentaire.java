@@ -7,7 +7,7 @@ public class Commentaire {
 
     //Attributs
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idCommentaire;
     private String commentaire;
 

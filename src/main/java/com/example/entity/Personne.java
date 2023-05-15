@@ -7,7 +7,7 @@ public class Personne {
 
     //Attributs
     @Id
-    @GeneratedValue()
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idPersonne;
 
     @Column(unique = true)

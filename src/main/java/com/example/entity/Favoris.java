@@ -7,7 +7,7 @@ public class Favoris {
 
     //Attributs
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idFavoris;
 
     @ManyToOne
