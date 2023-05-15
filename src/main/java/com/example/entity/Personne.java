@@ -36,6 +36,16 @@ public class Personne {
         this.typeCompte = typeCompte;
     }
 
+    public Personne(String nomUtilisateur, String motDePasse, String nom, String prenom, String email, String dateNaissance, String typeCompte) {
+        this.nomUtilisateur = nomUtilisateur;
+        this.motDePasse = motDePasse;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.dateNaissance = dateNaissance;
+        this.typeCompte = typeCompte;
+    }
+
     //Getter and Setter
     public Integer getIdPersonne() {
         return idPersonne;

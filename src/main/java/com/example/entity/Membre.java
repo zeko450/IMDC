@@ -40,6 +40,11 @@ public class Membre extends Personne {
         this.dateCreation = dateCreation;
     }
 
+    public Membre(String nomUtilisateur, String motDePasse, String nom, String prenom, String email, String dateNaissance, String typeCompte, Date dateCreation) {
+        super(nomUtilisateur, motDePasse, nom, prenom, email, dateNaissance, typeCompte);
+        this.dateCreation = dateCreation;
+    }
+
     //Getter and setter
     public int getNbNote() {
         return nbNote;
