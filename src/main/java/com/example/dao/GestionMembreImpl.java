@@ -50,6 +50,7 @@ public class GestionMembreImpl implements IGestionMembre{
             membreExistant.setNbCommentaire(membreExistant.getNbCommentaire());
             membreExistant.setDateCreation(membre.getDateCreation());
             transaction.commit();
+
             return true;
         }catch(Exception e){
             e.printStackTrace();
