@@ -14,7 +14,7 @@
         <properties>
 
             <property name="hibernate.connection.url"
-                      value="jdbc:mysql://mysql-zeko450.alwaysdata.net/zeko450_services?useSSL=false"/>
+                      value="jdbc:mysql://mysql-zeko450.alwaysdata.net/zeko450_imdc?useSSL=false"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
             <property name="hibernate.connection.username" value="zeko450"/>
             <property name="hibernate.connection.password" value="Alwaysdata2023"/>
