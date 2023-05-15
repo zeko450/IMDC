@@ -35,6 +35,12 @@ public class Note {
         this.film = film;
     }
 
+    public Note(int note, Membre membre, Film film) {
+        this.note = note;
+        this.membre = membre;
+        this.film = film;
+    }
+
     //Getter and setter
     public int getIdNote() {
         return idNote;
