@@ -13,4 +13,6 @@ public interface IRechercheFilm {
 
     List<Film> rechercherFilmParCategorie(String categorie);
 
+    Film rechercherFilmParId(int id);
+
 }

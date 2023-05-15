@@ -1,6 +1,7 @@
 package com.example.dao;
 
 import com.example.entity.Film;
+import com.example.entity.Membre;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Query;
 
@@ -64,4 +65,18 @@ public class RechercheFilmImpl implements IRechercheFilm {
         }
         return null;
     }
+
+    @Override
+    public Film rechercherFilmParId(int id) {
+        try {
+            Query query = dataManager.manager.createQuery("SELECT F FROM Film F WHERE F.idFilm = :id");
+            query.setParameter("id",id);
+            Film film = (Film) query.getSingleResult();
+            return film;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }

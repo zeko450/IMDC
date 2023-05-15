@@ -35,6 +35,12 @@ public class Commentaire {
         this.film = film;
     }
 
+    public Commentaire(String commentaire, Membre membre, Film film) {
+        this.commentaire = commentaire;
+        this.membre = membre;
+        this.film = film;
+    }
+
     //Getter and setter
     public int getIdCommentaire() {
         return idCommentaire;
@@ -76,4 +82,5 @@ public class Commentaire {
                 ", commentaire='" + commentaire + '\'' +
                 '}';
     }
+
 }
