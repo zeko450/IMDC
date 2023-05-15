@@ -7,7 +7,7 @@ public class GestionCommentaireImpl implements IGestionCommentaire{
 
     DataManager dataManager = null;
 
-    public GestionCommentaireImpl(DataManager dataManager) {this.dataManager = DataManager.getInstanceManager();}
+    public GestionCommentaireImpl() {this.dataManager = DataManager.getInstanceManager();}
 
 
     @Override
@@ -33,7 +33,7 @@ public class GestionCommentaireImpl implements IGestionCommentaire{
 
         try{
             Commentaire commentaireExistant = dataManager.manager.find(Commentaire.class,id);
-            commentaireExistant = commentaire;
+            commentaireExistant.setCommentaire(commentaire.getCommentaire());
             transaction.commit();
             return true;
         }catch(Exception e){
