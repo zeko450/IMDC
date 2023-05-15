@@ -1,9 +1,7 @@
 package com.example.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
+import org.hibernate.Length;
 
 import java.util.List;
 
@@ -12,12 +10,15 @@ public class Film {
 
     //Attributs
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idFilm;
     private String titre;
+    @Column(length=2500)
     private String description;
     private String anneeSortie;
+    @Column(length=2500)
     private String urlBandeAnnonce;
+    @Column(length=2500)
     private String urlImage;
     private String duree;
     private String realisateurs;

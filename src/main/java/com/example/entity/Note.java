@@ -7,7 +7,7 @@ public class Note {
 
     //Attributs
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idNote;
     private int note;
 
