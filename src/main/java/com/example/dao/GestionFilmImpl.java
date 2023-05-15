@@ -33,7 +33,15 @@ public class GestionFilmImpl implements IGestionFilm{
 
         try{
             Film filmExistant = dataManager.manager.find(Film.class,id);
-            filmExistant = film;
+            filmExistant.setTitre(film.getTitre());
+            filmExistant.setDescription(film.getDescription());
+            filmExistant.setAnneeSortie(film.getAnneeSortie());
+            filmExistant.setUrlBandeAnnonce(film.getUrlBandeAnnonce());
+            filmExistant.setUrlImage(film.getUrlImage());
+            filmExistant.setDuree(film.getDuree());
+            filmExistant.setRealisateurs(film.getRealisateurs());
+            filmExistant.setCategorie(film.getCategorie());
+            transaction.commit();
             transaction.commit();
             return true;
         }catch(Exception e){
