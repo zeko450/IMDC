@@ -11,5 +11,7 @@
 </h1>
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
+<a href="accueil.jsp">Acceuil</a>
+<a href="#">Films</a>
 </body>
 </html>
