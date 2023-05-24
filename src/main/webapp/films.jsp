@@ -29,10 +29,10 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="ServletDeLancement">Accueil</a>
+                                <a class="nav-link active" aria-current="page" href="ServletAffichageFilm?param=1">Accueil</a>
                             </li>
                             <li class="nav-item mx-3">
-                                <form action="ServletGestionRechercheFilm">
+                                <form action="ServletAffichageFilm">
                                     <div class="input-group mb-3 px-1 py-1 bg-dark">
                                         <select id="filtres" name="filtres" class="form-select">
                                             <option value="titre">Titre</option>
@@ -41,12 +41,13 @@
                                         </select>
                                         <input class="form-control me-2" type="search" placeholder="Search"
                                                aria-label="Search" name="motClef">
+                                        <input type="hidden" name="param" value="2">
                                         <button class="btn btn-warning" type="submit">Search</button>
                                     </div>
                                 </form>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="ServletCreationListFilms">Films</a>
+                                <a class="nav-link" href="ServletAffichageFilm?param=3">Films</a>
                             </li>
 
                             <li class="nav-item">
