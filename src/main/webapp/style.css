@@ -14,16 +14,15 @@ body {
     max-height:200px;
 }
 
-.text-carousel{
+.text-carousel {
     color:white;
     background-color: rgba(0,0,0,0.5);
     text-align: center;
 }
 
-.nouveauté {
+.nouveautes {
     color:white;
     font-size: 3em;
     background-color: rgba(0, 53, 100, 0.8);
-
 }
 
