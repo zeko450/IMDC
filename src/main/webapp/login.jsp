@@ -11,16 +11,6 @@
 <head>
     <title>Login Form</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <script>
-        function togglePasswordVisibility() {
-            let motDePasseInput = document.getElementById("motDePasse");
-            if (motDePasseInput.type === "motDePasse") {
-                motDePasseInput.type = "text";
-            } else {
-                motDePasseInput.type = "motDePasse";
-            }
-        }
-    </script>
 </head>
 <body>
 <header>
@@ -34,7 +24,6 @@
         <label for="motDePasse">Mot de passe:</label>
         <div class="password-input">
             <input type="password" id="motDePasse" name="motDePasse" required>
-            <button type="button" class="toggle-password" onclick="togglePasswordVisibility()"></button>
         </div><br><br>
 
         <input type="submit" value="Login">
