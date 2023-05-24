@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -101,12 +102,9 @@
         </div>
         <br>
         <span class="nouveautes"> Nos nouveautés</span> <br>
-        <img src="images/007.jpg" alt="007" width="200px" height="300px">
-        <img src="images/avatar2.jpg" alt="avatar" width="200px" height="300px">
-        <img src="images/Narnia.jpg" alt="narnia" width="200px" height="300px">
-        <img src="images/SupermariosBros.jpg" alt="supermariosbros" width="200px" height="300px">
-        <img src="images/SpiderMan.jpg" alt="spiderman" width="200px" height="300px">
-
+        <c:forEach var="item" items="${requestScope.list5DerniersFilm}">
+            <img src="${item.urlImage}" class="img-thumbnail" style="height: 300px;width: 200px" alt="${item.titre}">
+        </c:forEach>
         <br> <br> <br>
 
     </div>
