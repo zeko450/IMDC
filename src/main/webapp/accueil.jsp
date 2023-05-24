@@ -66,6 +66,56 @@
         </div>
     </div>
 </div>
+<div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="imgcar" src="/images/Turkie.jpg"  alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="imgcar" src="/images/Maroc.jpg"  alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="imgcar" src="/images/Chine.jpg" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="text-carousel" >Bienvenue à IMDC.</div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <br> <br> <br > <br> <br>
+        <span class="nouveauté"> Nos nouveautés</span> <br>
+        <img src="/images/007.jpg" alt="007" width="200px" height="300px">
+        <img src="/images/avatar2.jpg" alt="avatar" width="200px" height="300px">
+        <img src="/images/Narnia.jpg" alt="narnia" width="200px" height="300px">
+        <img src="/images/SupermariosBros.jpg" alt="supermariosbros" width="200px" height="300px">
+        <img src="/images/SpiderMan.jpg" alt="spiderman" width="200px" height="300px">
+
+        <br> <br> <br>
+
+
+
+
+    </div>
 </body>
 
 </html>

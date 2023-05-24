@@ -7,4 +7,23 @@ body {
     background-attachment: fixed;
 }
 
+.imgcarousel {
+    width:550px;
+    height:200px;
+    max-width:550px;
+    max-height:200px;
+}
+
+.text-carousel{
+    color:white;
+    background-color: rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.nouveauté {
+    color:white;
+    font-size: 3em;
+    background-color: rgba(0, 53, 100, 0.8);
+
+}
 
