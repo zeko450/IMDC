@@ -63,7 +63,7 @@
     <c:forEach var="item" items="${requestScope.listFilm}">
         <div class="row my-3">
             <div class="col-3">
-                <img src="${item.urlImage}" class="img-thumbnail" style="height: 100%" alt="${item.titre}">
+                <img src="${item.urlImage}" class="img-thumbnail" style="height: 100%; width: 100%" alt="${item.titre}">
             </div>
             <div class="col-6" style="background:rgba(299,299,299)">
                 <div class="row">
