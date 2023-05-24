@@ -15,4 +15,6 @@ public interface IRechercheFilm {
 
     Film rechercherFilmParId(int id);
 
+    List<Film> retourner5DerniersFilms();
+
 }

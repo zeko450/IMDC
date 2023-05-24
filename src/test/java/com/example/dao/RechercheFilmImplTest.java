@@ -54,4 +54,12 @@ class RechercheFilmImplTest {
         List<Film> filmList = rechercheFilm.rechercherFilmParCategorie("aventure");
         Assert.assertEquals(1,filmList.size());
     }
+
+    @Test
+    void testRetourner5DerniersFilmsRetourneListeTaille5() {
+        System.out.println("testRetourner5DerniersFilmsRetourneListeTaille5");
+        //Chercher les films
+        List<Film> filmList = rechercheFilm.retourner5DerniersFilms();
+        Assert.assertEquals(5,filmList.size());
+    }
 }

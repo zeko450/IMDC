@@ -79,4 +79,17 @@ public class RechercheFilmImpl implements IRechercheFilm {
         return null;
     }
 
+    @Override
+    public List<Film> retourner5DerniersFilms() {
+        try {
+            Query query = dataManager.manager.createNativeQuery("SELECT * FROM Film order by idFilm desc");
+            query.setMaxResults(5);
+            List<Film> listeFilm= query.getResultList();
+            return listeFilm;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }
