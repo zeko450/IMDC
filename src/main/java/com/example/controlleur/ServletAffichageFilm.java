@@ -49,6 +49,12 @@ public class ServletAffichageFilm extends HttpServlet {
             List<Film> listFilm = rechercheFilmDao.retournerListFilms();
             request.setAttribute("listFilm", listFilm);
             url = "/films.jsp";
+
+        }else if(param.equals("4")){
+            int id = Integer.parseInt(request.getParameter("idFilm"));
+            Film film = rechercheFilmDao.rechercherFilmParId(id);
+            request.setAttribute("film",film);
+            url = "/detailsFilm.jsp";
         }
 
         RequestDispatcher disp = getServletContext().getRequestDispatcher(url);

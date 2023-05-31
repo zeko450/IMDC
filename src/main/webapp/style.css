@@ -17,3 +17,50 @@ body {
     font-weight: bold;
 }
 
+.textresumefilm{
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.icone1{
+    height: 50px;
+    width: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+.icone2{
+    height: 30px;
+    width: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 8px;
+
+}
+
+.rating1 {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+    margin-top:-25px;
+}
+
+.rating1 input[type="radio"] {
+    display: none;
+}
+
+.rating1 label {
+    font-size: 30px;
+    color: lightgray;
+    cursor: pointer;
+}
+
+.rating1 input[type="radio"]:checked ~ label {
+    color: gold;
+}
+
+.rating2 {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+    margin-top: -5px;
+    margin-left: -260px;
+}

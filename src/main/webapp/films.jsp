@@ -68,7 +68,7 @@
             </div>
             <div class="col-6" style="background:rgba(299,299,299)">
                 <div class="row">
-                    <h1>${item.titre}</h1>
+                    <a href="ServletAffichageFilm?param=4&idFilm=${item.idFilm}"><h1>${item.titre}</h1></a>
                 </div>
                 <div class="row">
                     <p style="margin-bottom: 0px;">Durée: ${item.duree}</p>

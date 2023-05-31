@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,14 +69,13 @@
   <div class="row mt-5 ">
     <div class="col-1"></div>
     <div class="col-4 textresumefilm">
-      <img src="images/ALaPoursuiteDeDemain.jpg" alt="Image">
+      <img src="${film.urlImage}" alt="Image" style="height: 300px;width: 200px">
       <br>
-      <img class="icone1" src="icones/play-circle.png" alt="icone">
-      <a href="">Bande-annonce</a>
+      <img class="icone1" src="images/play-circle.png" alt="icone">
+      <a href="${film.urlBandeAnnonce}">Bande-annonce</a>
       <br>
-      <h6 class="mx-2"> Realisateur : Brad Bird</h6>
-      <h6 class="mx-2"> Acteurs : George Clooney-Britt Robertson-Hugh Laurie</h6>
-      <img class="icone2" src="icones/ajouter.png" alt="icone">
+      <h6 class="mx-2"> Realisateur : ${film.realisateurs}</h6>
+      <img class="icone2" src="images/ajouter.png" alt="icone">
       <a href="">Ajouter-favoris</a>
       <h6 class="mx-2"> Note moyenne : <div class="rating1">
         <input type="radio" id="star5" name="rating" value="5" />
@@ -135,17 +135,10 @@
     </div>
 
     <div class="col-6 textresumefilm">
-      <h3>Titre : A la poursuite de demain</h3>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam dolor officiis soluta nam beatae
-        illum
-        amet perferendis doloremque dolorum, et ad, aliquid culpa dolore? Fuga numquam deserunt nulla vero
-        commodi.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. In vitae tempore placeat itaque provident.
-        Praesentium velit tenetur autem, minus aperiam dolor placeat, iure ut ipsum ea, dolorum quasi
-        perspiciatis labore.
-      </p>
-      <h5>Genre : Action, Comedie, Sci-Fi</h5>
-      <h5>Durée : 2h10</h5>
+      <h3>${film.titre}</h3>
+      <p>${film.description}</p>
+      <h5>${film.categorie}</h5>
+      <h5>Durée : ${film.duree}</h5>
     </div>
   </div>
 </div>
