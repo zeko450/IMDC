@@ -99,6 +99,7 @@
         <textarea id="message" name="message" placeholder="Saisissez votre commentaire ici"></textarea>
       </div>
       <input type="hidden" name="param" value="4">
+        <input type="hidden" name="idFilm" value="${film.idFilm}">
       <button class="btn btn-primary" type="submit"> Soumettre</button>
       </form>
 

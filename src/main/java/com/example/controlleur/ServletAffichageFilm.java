@@ -68,6 +68,15 @@ public class ServletAffichageFilm extends HttpServlet {
             Film film = rechercheFilmDao.rechercherFilmParId(id);
             request.setAttribute("film", film);
 
+            //Moyenne Note
+            double somme = 0;
+            double moyenne;
+            for (Note tmp : film.getNoteList()) {
+                somme += tmp.getNote();
+            }
+            moyenne = somme / film.getNoteList().size();
+            request.setAttribute("moyenne", moyenne);
+
             //Persister Note
             if (request.getParameter("rating") != null){
                 int noteSaisie = Integer.parseInt(request.getParameter("rating"));
@@ -78,17 +87,6 @@ public class ServletAffichageFilm extends HttpServlet {
 
             //Persister Commentaire
 
-
-
-
-            //Moyenne Note
-            double somme = 0;
-            double moyenne;
-            for (Note tmp : film.getNoteList()) {
-                somme += tmp.getNote();
-            }
-            moyenne = somme / film.getNoteList().size();
-            request.setAttribute("moyenne", moyenne);
 
             url = "/detailsFilm.jsp";
         }
