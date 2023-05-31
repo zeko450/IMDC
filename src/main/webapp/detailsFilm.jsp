@@ -27,7 +27,6 @@
 <div class="container">
   <div class="row mt-5">
     <div col-2>
-      <img src="images/imdc.png" alt="" style="width: 10%;">
     </div>
     <div col-8>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -35,22 +34,25 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+                <a class="nav-link active" aria-current="page" href="ServletAffichageFilm?param=1">Accueil</a>
               </li>
-              <li class="nav-item ms-5 ps-1 pt-1 pb-1 bg-dark">
-                <select id="filtres" class="form-select">
-                  <option value="titre" selected>Titre</option>
-                  <option value="année">Année</option>
-                  <option value="catégorie">Catégorie</option>
-                </select>
+              <li class="nav-item mx-3">
+                <form action="ServletAffichageFilm">
+                  <div class="input-group mb-3 px-1 py-1 bg-dark">
+                    <select id="filtres" name="filtres" class="form-select">
+                      <option value="titre">Titre</option>
+                      <option value="année">Année</option>
+                      <option value="catégorie">Catégorie</option>
+                    </select>
+                    <input class="form-control me-2" type="search" placeholder="Search"
+                           aria-label="Search" name="motClef">
+                    <input type="hidden" name="param" value="2">
+                    <button class="btn btn-warning" type="submit">Search</button>
+                  </div>
+                </form>
               </li>
-              <form class="d-flex me-5 pe-1 py-1 bg-dark">
-                <input class="form-control me-2" type="search" placeholder="Search"
-                       aria-label="Search">
-                <button class="btn btn-warning" type="submit">Search</button>
-              </form>
               <li class="nav-item">
-                <a class="nav-link" href="#">Films</a>
+                <a class="nav-link" href="ServletAffichageFilm?param=3">Films</a>
               </li>
 
               <li class="nav-item">
@@ -77,19 +79,9 @@
       <h6 class="mx-2"> Realisateur : ${film.realisateurs}</h6>
       <img class="icone2" src="images/ajouter.png" alt="icone">
       <a href="">Ajouter-favoris</a>
-      <h6 class="mx-2"> Note moyenne : <div class="rating1">
-        <input type="radio" id="star5" name="rating" value="5" />
-        <label for="star5">&#9733;</label>
-        <input type="radio" id="star4" name="rating" value="4" />
-        <label for="star4">&#9733;</label>
-        <input type="radio" id="star3" name="rating" value="3" />
-        <label for="star3">&#9733;</label>
-        <input type="radio" id="star2" name="rating" value="2" />
-        <label for="star2">&#9733;</label>
-        <input type="radio" id="star1" name="rating" value="1" />
-        <label for="star1">&#9733;</label>
-      </div>
-      </h6>
+      <h6 class="mx-2"> Note moyenne : ${moyenne}</h6>
+
+      <form action="ServletAffichageFilm">
       <h6 class="mx-2"> Vous avez vu ce film? vous pouvez laissez votre avis !</h6>
       <div class="rating2">
         <input type="radio" id="star5" name="rating" value="5" />
@@ -106,7 +98,10 @@
       <div>
         <textarea id="message" name="message" placeholder="Saisissez votre commentaire ici"></textarea>
       </div>
-      <button class="btn btn-primary" type="submit">Soumettre</button>
+      <input type="hidden" name="param" value="4">
+      <button class="btn btn-primary" type="submit"> Soumettre</button>
+      </form>
+
       <h3>COMMENTAIRES</h3>
       <div>
                     <textarea id="message"
