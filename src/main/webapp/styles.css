@@ -1,16 +1,14 @@
 body {
+    background-image: url("images/HollyWood.jpg");
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #e2e9ef;
-}
-
-header {
-    background-color: #000000;
-    color: #ffffff;
-    padding: 10px;
-    font-size: 24px;
+    background-color: #cccccc;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .container {

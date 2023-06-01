@@ -60,7 +60,7 @@
                             </li>
 
                         </ul>
-                        <a href="nav-link" href="#">Se connecter</a>
+                        <a href="login.jsp">Se connecter</a>
                     </div>
                 </div>
             </nav>
