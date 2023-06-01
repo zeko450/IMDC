@@ -30,7 +30,6 @@ public class GestionCommentaireImpl implements IGestionCommentaire{
         EntityTransaction transaction = dataManager.manager.getTransaction();
         transaction.begin();
 
-
         try{
             Commentaire commentaireExistant = dataManager.manager.find(Commentaire.class,id);
             commentaireExistant.setCommentaire(commentaire.getCommentaire());

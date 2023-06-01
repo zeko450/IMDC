@@ -18,16 +18,10 @@ body {
 }
 
 .textresumefilm{
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: white;
 }
-.icone1{
-    height: 50px;
-    width: 50px;
-    margin-top: 5px;
-    margin-bottom: 5px;
 
-}
-.icone2{
+.icone{
     height: 30px;
     width: 30px;
     margin-top: 5px;
@@ -60,7 +54,7 @@ body {
 .rating2 {
     unicode-bidi: bidi-override;
     direction: rtl;
-    text-align: center;
+    text-align: left;
     margin-top: 0px;
     margin-left: 0px;
 }
