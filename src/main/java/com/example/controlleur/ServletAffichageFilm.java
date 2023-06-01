@@ -4,6 +4,7 @@ import com.example.dao.GestionCommentaireImpl;
 import com.example.dao.GestionMembreImpl;
 import com.example.dao.GestionNoteImpl;
 import com.example.dao.RechercheFilmImpl;
+import com.example.entity.Commentaire;
 import com.example.entity.Film;
 import com.example.entity.Membre;
 import com.example.entity.Note;
@@ -63,30 +64,29 @@ public class ServletAffichageFilm extends HttpServlet {
             url = "/films.jsp";
 
         } else if (param.equals("4")) {
+
             //Recuperer Film
             int id = Integer.parseInt(request.getParameter("idFilm"));
             Film film = rechercheFilmDao.rechercherFilmParId(id);
-            request.setAttribute("film", film);
 
-            //Moyenne Note
+            //Recuperer liste de commentaire
+            //List<Commentaire> listCommentaire = film.getCommentaireList();
+
+            //Calculer note moyenne
             double somme = 0;
-            double moyenne;
-            for (Note tmp : film.getNoteList()) {
-                somme += tmp.getNote();
+            double moyenne = 0;
+
+            if(film.getNoteList().size() > 0){
+                for (Note tmp : film.getNoteList()) {
+                    somme += tmp.getNote();
+                }
+                moyenne = somme / film.getNoteList().size();
             }
-            moyenne = somme / film.getNoteList().size();
+
+
+            //request.setAttribute("listCommentaire",listCommentaire);
             request.setAttribute("moyenne", moyenne);
-
-            //Persister Note
-            if (request.getParameter("rating") != null){
-                int noteSaisie = Integer.parseInt(request.getParameter("rating"));
-                Membre membre = gestionMembreDao.rechercherMembre("AlainFlouflou");
-                Note note = new Note(noteSaisie, membre, film);
-                boolean ajout = gestionNoteDao.ajouterNote(note);
-            }
-
-            //Persister Commentaire
-
+            request.setAttribute("film", film);
 
             url = "/detailsFilm.jsp";
         }
