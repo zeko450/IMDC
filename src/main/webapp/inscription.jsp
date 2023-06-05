@@ -54,7 +54,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href='#'>Favoris</a>
+                                <a class="nav-link" href='ServletGestionFavoris/param=affichage'>Favoris</a>
                             </li>
 
                         </ul>

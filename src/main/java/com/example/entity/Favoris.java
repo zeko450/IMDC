@@ -42,6 +42,25 @@ public class Favoris {
         this.film = film;
     }
 
+    //Getter and setter
+
+
+    public Membre getMembre() {
+        return membre;
+    }
+
+    public void setMembre(Membre membre) {
+        this.membre = membre;
+    }
+
+    public Film getFilm() {
+        return film;
+    }
+
+    public void setFilm(Film film) {
+        this.film = film;
+    }
+
     //ToString
     @Override
     public String toString() {
