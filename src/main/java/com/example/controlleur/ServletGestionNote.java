@@ -40,6 +40,7 @@ public class ServletGestionNote extends HttpServlet {
         Membre membre = (Membre) session.getAttribute("membre");
 
         if(membre != null) {
+            System.out.println("le membre: " + membre);
             Note note = gestionNoteDao.chercherNote(film, membre);
 
             if (request.getParameter("rating") != null) {

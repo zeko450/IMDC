@@ -33,7 +33,7 @@ public class ServletLogin extends HttpServlet {
 
         if(membre != null){
             if(membre.getMotDePasse().equals(mdp)){
-                url = "/accueil.jsp";
+                url = "/ServletAffichageFilm?param=1";
                 session.setAttribute("membre",membre);
             }else{
                 url = "/login.jsp";
