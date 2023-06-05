@@ -38,6 +38,7 @@ public class ServletGestionNote extends HttpServlet {
         Film film = rechercheFilmDao.rechercherFilmParId(idFilm);
         HttpSession session = request.getSession();
         Membre membre = (Membre) session.getAttribute("membre");
+        String url = "";
 
         if(membre != null) {
             System.out.println("le membre: " + membre);
@@ -53,9 +54,12 @@ public class ServletGestionNote extends HttpServlet {
                     boolean noteModifié = gestionNoteDao.modifierNote(note.getIdNote(), noteSaisie);
                 }
             }
+            url = "/ServletAffichageFilm?param=4&idFilm="+idFilm;
+        }else{
+            url = "/login.jsp";
         }
 
-        RequestDispatcher disp = getServletContext().getRequestDispatcher("/ServletAffichageFilm?param=4&idFilm="+idFilm);
+        RequestDispatcher disp = getServletContext().getRequestDispatcher(url);
         disp.forward(request, response);
 
     }

@@ -36,16 +36,20 @@ public class ServletGestionCommentaire extends HttpServlet {
         Film film = rechercheFilmDao.rechercherFilmParId(idFilm);
         HttpSession session = request.getSession();
         Membre membre = (Membre) session.getAttribute("membre");
+        String url = "";
 
         if(membre != null) {
             if (request.getParameter("message") != null) {
                 String messageSaisi = request.getParameter("message");
                 Commentaire nouveauCommentaire = new Commentaire(messageSaisi, membre, film);
                 boolean commentaireAjoute = gestionCommentaireDao.ajouterCommentaire(nouveauCommentaire);
+                url = "/ServletAffichageFilm?param=4&idFilm="+idFilm;
             }
+        }else{
+            url = "/login.jsp";
         }
 
-        RequestDispatcher disp = getServletContext().getRequestDispatcher("/ServletAffichageFilm?param=4&idFilm="+idFilm);
+        RequestDispatcher disp = getServletContext().getRequestDispatcher(url);
         disp.forward(request, response);
 
     }
