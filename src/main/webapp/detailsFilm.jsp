@@ -60,7 +60,7 @@
                             </li>
 
                         </ul>
-                        <a href="nav-link" href="login.jsp">Se connecter</a>
+                        <a href="login.jsp">Se connecter</a>
                     </div>
                 </div>
             </nav>
@@ -77,7 +77,7 @@
             <a href="${film.urlBandeAnnonce}">Bande-annonce</a>
             <br>
             <img class="icone" src="images/ajouter.png" alt="icone">
-            <a href="ServletGestionFavoris?param=ajout&idFilm=${film.idFilm}">Ajouter-favoris</a>
+            <a href='ServletGestionFavoris?param=ajout&idFilm=${film.idFilm}'>Ajouter-favoris</a>
         </div>
         <div class="col-5">
             <h3>${film.titre}</h3>

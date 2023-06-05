@@ -44,10 +44,11 @@ public class ServletGestionFavoris extends HttpServlet {
                     Film film = rechercheFilmDao.rechercherFilmParId(Integer.parseInt(idFilm));
                     Favoris favoris = new Favoris(membre, film);
                     boolean favorisAjoute = gestionFavorisDao.ajouterFavoris(favoris);
-                    url = "ServletAffichageFilm?param=4&idFilm=" + idFilm;
+
+                    url = "/ServletAffichageFilm?param=4&idFilm=" + idFilm;
                 }else{
                     String idFilm = request.getParameter("idFilm");
-                    url = "ServletAffichageFilm?param=4&idFilm=" + idFilm;
+                    url = "/ServletAffichageFilm?param=4&idFilm=" + idFilm;
                 }
 
             } else if (param.equals("affichage")) {
