@@ -56,7 +56,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href='ServletGestionFavoris/param=affichage'>Favoris</a>
+                                <a class="nav-link" href='ServletGestionFavoris?param=affichage'>Favoris</a>
                             </li>
 
                         </ul>
@@ -77,7 +77,7 @@
             <a href="${film.urlBandeAnnonce}">Bande-annonce</a>
             <br>
             <img class="icone" src="images/ajouter.png" alt="icone">
-            <a href="ServletGestionFavoris/param=ajout&idFilm=${film.idFilm}">Ajouter-favoris</a>
+            <a href="ServletGestionFavoris?param=ajout&idFilm=${film.idFilm}">Ajouter-favoris</a>
         </div>
         <div class="col-5">
             <h3>${film.titre}</h3>

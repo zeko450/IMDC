@@ -36,25 +36,34 @@ public class ServletGestionFavoris extends HttpServlet {
         String url = "";
         HttpSession session = request.getSession();
         Membre membre = (Membre) session.getAttribute("membre");
-        if (membre != null) {
-            if (param.equals("ajout")) {
-                String idFilm = request.getParameter("idFilm");
-                Film film = rechercheFilmDao.rechercherFilmParId(Integer.parseInt(idFilm));
 
-                Favoris favoris = new Favoris(membre, film);
-                boolean favorisAjoute = gestionFavorisDao.ajouterFavoris(favoris);
-                url = "ServletAffichageFilm?param=4&idFilm=" + idFilm;
+
+            if (param.equals("ajout")) {
+                if (membre != null) {
+                    String idFilm = request.getParameter("idFilm");
+                    Film film = rechercheFilmDao.rechercherFilmParId(Integer.parseInt(idFilm));
+                    Favoris favoris = new Favoris(membre, film);
+                    boolean favorisAjoute = gestionFavorisDao.ajouterFavoris(favoris);
+                    url = "ServletAffichageFilm?param=4&idFilm=" + idFilm;
+                }else{
+                    String idFilm = request.getParameter("idFilm");
+                    url = "ServletAffichageFilm?param=4&idFilm=" + idFilm;
+                }
 
             } else if (param.equals("affichage")) {
-                List<Favoris> listFavoris = membre.getFavorisList();
-                List<Film> listFilm = new ArrayList<>();
-                for(Favoris tmp : listFavoris){
-                    listFilm.add(tmp.getFilm());
+                if (membre != null) {
+                    List<Favoris> listFavoris = membre.getFavorisList();
+                    List<Film> listFilm = new ArrayList<>();
+                    for (Favoris tmp : listFavoris) {
+                        listFilm.add(tmp.getFilm());
+                    }
+                    request.setAttribute("listFilm", listFilm);
+                    url = "/favoris.jsp";
+                }else{
+                    url = "/ServletAffichageFilm?param=1";
                 }
-                request.setAttribute("listFilm",listFilm);
-                url = "/favoris.jsp";
             }
-        }
+
         RequestDispatcher disp = getServletContext().getRequestDispatcher(url);
         disp.forward(request, response);
 
