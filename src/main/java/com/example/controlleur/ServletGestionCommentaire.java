@@ -34,13 +34,15 @@ public class ServletGestionCommentaire extends HttpServlet {
 
         int idFilm = Integer.parseInt(request.getParameter("idFilm"));
         Film film = rechercheFilmDao.rechercherFilmParId(idFilm);
-        Membre membre = gestionMembreDao.rechercherMembre("AlainFlouflou");
+        HttpSession session = request.getSession();
+        Membre membre = (Membre) session.getAttribute("membre");
 
-
-        if (request.getParameter("message") != null) {
-            String messageSaisi = request.getParameter("message");
-            Commentaire nouveauCommentaire = new Commentaire(messageSaisi,membre,film);
-            boolean commentaireAjoute = gestionCommentaireDao.ajouterCommentaire(nouveauCommentaire);
+        if(membre != null) {
+            if (request.getParameter("message") != null) {
+                String messageSaisi = request.getParameter("message");
+                Commentaire nouveauCommentaire = new Commentaire(messageSaisi, membre, film);
+                boolean commentaireAjoute = gestionCommentaireDao.ajouterCommentaire(nouveauCommentaire);
+            }
         }
 
         RequestDispatcher disp = getServletContext().getRequestDispatcher("/ServletAffichageFilm?param=4&idFilm="+idFilm);

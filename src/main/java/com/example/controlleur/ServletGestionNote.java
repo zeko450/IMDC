@@ -36,18 +36,21 @@ public class ServletGestionNote extends HttpServlet {
 
         int idFilm = Integer.parseInt(request.getParameter("idFilm"));
         Film film = rechercheFilmDao.rechercherFilmParId(idFilm);
-        Membre membre = gestionMembreDao.rechercherMembre("AlainFlouflou");
+        HttpSession session = request.getSession();
+        Membre membre = (Membre) session.getAttribute("membre");
 
-        Note note = gestionNoteDao.chercherNote(film,membre);
+        if(membre != null) {
+            Note note = gestionNoteDao.chercherNote(film, membre);
 
-        if (request.getParameter("rating") != null) {
-            int noteSaisie = Integer.parseInt(request.getParameter("rating"));
+            if (request.getParameter("rating") != null) {
+                int noteSaisie = Integer.parseInt(request.getParameter("rating"));
 
-            if (note == null) {
-                Note noteNouvelle = new Note(noteSaisie, membre, film);
-                boolean noteAjouté = gestionNoteDao.ajouterNote(noteNouvelle);
-            } else {
-                boolean noteModifié = gestionNoteDao.modifierNote(note.getIdNote(), noteSaisie);
+                if (note == null) {
+                    Note noteNouvelle = new Note(noteSaisie, membre, film);
+                    boolean noteAjouté = gestionNoteDao.ajouterNote(noteNouvelle);
+                } else {
+                    boolean noteModifié = gestionNoteDao.modifierNote(note.getIdNote(), noteSaisie);
+                }
             }
         }
 
