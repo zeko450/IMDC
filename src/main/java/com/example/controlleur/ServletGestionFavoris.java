@@ -22,11 +22,13 @@ public class ServletGestionFavoris extends HttpServlet {
     RechercheFilmImpl rechercheFilmDao;
 
     GestionFavorisImpl gestionFavorisDao;
+    GestionMembreImpl gestionMembre;
 
     @Override
     public void init() {
         rechercheFilmDao = new RechercheFilmImpl();
         gestionFavorisDao = new GestionFavorisImpl();
+        gestionMembre = new GestionMembreImpl();
     }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -53,7 +55,8 @@ public class ServletGestionFavoris extends HttpServlet {
 
             } else if (param.equals("affichage")) {
                 if (membre != null) {
-                    List<Favoris> listFavoris = membre.getFavorisList();
+                    Membre m = gestionMembre.rechercherMembre(membre.getNomUtilisateur());
+                    List<Favoris> listFavoris = m.getFavorisList();
                     List<Film> listFilm = new ArrayList<>();
                     for (Favoris tmp : listFavoris) {
                         listFilm.add(tmp.getFilm());
