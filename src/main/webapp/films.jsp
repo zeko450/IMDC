@@ -21,7 +21,6 @@
 <div class="container">
     <div class="row mt-5">
         <div col-2>
-            <img src="images/imdc.png" alt="" style="width: 10%;">
         </div>
         <div col-8>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -55,7 +54,7 @@
                             </li>
 
                         </ul>
-                        <a href="nav-link" href="#">Se connecter</a>
+                        <a href="login.jsp">Se connecter</a>
                     </div>
                 </div>
             </nav>
