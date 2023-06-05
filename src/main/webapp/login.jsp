@@ -66,7 +66,7 @@
     <div class="row mt-5">
         <div class="col-4"></div>
         <div class="col-4 containerConnectionInscription">
-            <form action="loginDao.jsp" method="POST" class="formConnectionInscription">
+            <form action="ServletLogin" method="POST" class="formConnectionInscription">
                 <label for="nomUtilisateur" class="labelConnectionInscription">Nom d'utilisateur:</label>
                 <input type="text" id="nomUtilisateur" name="nomUtilisateur" class="inputTextConnectionInscription" required>
 

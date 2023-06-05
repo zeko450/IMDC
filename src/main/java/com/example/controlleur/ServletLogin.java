@@ -23,7 +23,27 @@ public class ServletLogin extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        String nomUtilisateur = request.getParameter("nomUtilisateur");
+        String mdp = request.getParameter("motDePasse");
+        String url = "";
+        String messageErreur = "";
+        HttpSession session = request.getSession();
 
+        Membre membre = gestionMembreDao.rechercherMembre(nomUtilisateur);
+
+        if(membre != null){
+            if(membre.getMotDePasse().equals(mdp)){
+                url = "/accueil.jsp";
+                session.setAttribute("membre",membre);
+            }else{
+                url = "/login.jsp";
+            }
+        }else{
+            url = "/login.jsp";
+        }
+
+        RequestDispatcher disp = getServletContext().getRequestDispatcher(url);
+        disp.forward(request, response);
 
     }
 
