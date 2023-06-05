@@ -56,7 +56,8 @@ public class ServletGestionFavoris extends HttpServlet {
             } else if (param.equals("affichage")) {
                 if (membre != null) {
                     Membre m = gestionMembre.rechercherMembre(membre.getNomUtilisateur());
-                    List<Favoris> listFavoris = m.getFavorisList();
+                    List<Favoris> listFavoris = new ArrayList<>();
+                    listFavoris = m.getFavorisList();
                     List<Film> listFilm = new ArrayList<>();
                     for (Favoris tmp : listFavoris) {
                         listFilm.add(tmp.getFilm());
