@@ -18,11 +18,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <div class="container">
-    <div class="row mt-5">
+    <div class="row my-5">
         <div col-2>
         </div>
         <div col-8>
@@ -63,33 +63,30 @@
             </nav>
         </div>
     </div>
-</div>
-<div>
-    <br>
-    <div class="container">
-    <form action="loginDao.jsp" method="POST">
-        <label for="nomUtilisateur">Nom d'utilisateur:</label>
-        <input type="text" id="nomUtilisateur" name="nomUtilisateur" required><br><br>
+    <div class="row mt-5">
+        <div class="col-4"></div>
+        <div class="col-4 containerConnectionInscription">
+            <form action="loginDao.jsp" method="POST" class="formConnectionInscription">
+                <label for="nomUtilisateur" class="labelConnectionInscription">Nom d'utilisateur:</label>
+                <input type="text" id="nomUtilisateur" name="nomUtilisateur" class="inputTextConnectionInscription" required>
 
-        <label for="motDePasse">Mot de passe:</label>
-            <input type="password" id="motDePasse" name="motDePasse" required>
+                <label for="motDePasse" class="labelConnectionInscription">Mot de passe:</label>
+                <input type="password" id="motDePasse" name="motDePasse" class="inputTextConnectionInscription" required>
 
-        <input type="submit" value="Login">
-        <br><br>
 
-        <div>Vous n'avez pas de compte?
-            <a href="inscription.jsp" class="inscription">S'inscrire</a>
-        </div>
-        <br>
+                <input type="submit" value="Login" class="submitConnectionInscription">
+                <br>
 
-        <div><a href="forgot-password.jsp" class="forgot-password">Mot de passe oublié?</a></div>
-    </form>
+                <div>Vous n'avez pas de compte?
+                    <a href="inscription.jsp" class="inscription">S'inscrire</a>
+                </div>
+                <div><a href="forgot-password.jsp" class="forgot-password">Mot de passe oublié?</a></div>
+            </form>
+    </div>
+        <div class="col-4"></div>
     </div>
 </div>
-</div>
-<footer>
-    <p>&copy; 2023 IMDC. All rights reserved.</p>
-</footer>
+
 </body>
 </html>
 
